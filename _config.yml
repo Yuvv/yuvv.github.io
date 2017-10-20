@@ -1,0 +1,38 @@
+# Site settings
+title: 咸鱼的幻想乡
+email: yuvv.th@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  yuvv's blog.
+baseurl: "/blog" # the subpath of your site, e.g. /blog/
+url: "https://yuvv.github.io/blog/" # the base hostname & protocol for your site
+
+
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
+
+
+# Social account
+# twitter:  username
+weibo: 3147725543
+github: Yuvv
+# codepen:  username
+# dribbble: username
+
+
+# Comment
+# disqus_shortname: discussion_shortname
+
+
+# Google Analytics
+google_analytics: UA-86394520-3
+
+# katex
+katex: true
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+gems:
+  - jekyll-sitemap
