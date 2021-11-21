@@ -6,6 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://yuvv.github.io/" # the base hostname & protocol for your site
 
+timezone: Asia/Shanghai
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
@@ -34,5 +35,5 @@ katex: true
 markdown: kramdown
 sass:
   style: compressed
-gems:
+plugins:
   - jekyll-sitemap
