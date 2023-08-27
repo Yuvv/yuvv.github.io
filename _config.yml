@@ -6,7 +6,7 @@ title: 咸鱼的幻想乡
 email: yuvv.th@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Yuvv's Blog.
-baseurl: "/~blog" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://yuvv.github.io/" # the base hostname & protocol for your site
 
 timezone: Asia/Shanghai
