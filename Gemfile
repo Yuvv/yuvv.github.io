@@ -10,3 +10,7 @@ gem "jekyll-sitemap", "~> 1.1"
 gem "kramdown-parser-gfm", "~> 1.1"
 
 gem "webrick"
+
+gem "kramdown-math-katex", "~> 1.0"
+
+gem "duktape", "~> 2.7"

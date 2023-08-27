@@ -54,6 +54,11 @@ $(function() {
       ga('set', 'location', window.location.href);
       ga('send', 'pageview');
       {% endif %}
+
+      {% if site.google_analytics4 %}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics4 }}');
+      {% endif %}
     }
   });
 
@@ -76,6 +81,8 @@ $(function() {
     $(this).add(sidebar).toggleClass('open');
   });
 
+{% comment %}
+  // Katex -- we don't need this since we use server-side render
   {% if site.katex %}
   $("script[type='math/tex']").replaceWith(function() {
       var tex = $(this).text();
@@ -87,5 +94,6 @@ $(function() {
       return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
   });
   {% endif %}
+{% endcomment %}
 
 });
