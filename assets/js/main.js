@@ -83,7 +83,7 @@ $(function() {
 
 {% comment %}
   // Katex -- we don't need this since we use server-side render
-  {% if site.katex %}
+  {% if page.katex %}
   $("script[type='math/tex']").replaceWith(function() {
       var tex = $(this).text();
       return katex.renderToString(tex, {displayMode: false});

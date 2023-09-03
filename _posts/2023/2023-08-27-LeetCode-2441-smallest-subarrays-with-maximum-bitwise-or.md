@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "LeetCode-2411-最大按位或值的最小子数组"
-date: 2023-08-27 09:59:23
+date: 2023-08-27 17:59:23+0800
+katex: true
 category: LeetCode
 tags:
   - LeetCode
@@ -63,32 +64,30 @@ Output: [2,1]
 最终实现的 Java 代码如下：
 
 ```java
-class Solution {
-    public int[] smallestSubarrays(int[] nums) {
-        int[] res = new int[nums.length];
-        int[] bitIndex = new int[32]; // 每一位上为 1 的数字的最小索引
-        int highBit = 0; // 记录当前最高位
-        Arrays.fill(bitIndex, -1);
-        for (int i = nums.length-1; i >= 0; i--) {
-            int nn = nums[i];
-            int j = 0;
-            int maxDis = 1;
-            while (nn > 0 || j <= highBit) {
-                highBit = Math.max(highBit, j);
-                if (nn % 2 == 0) {
-                    if (bitIndex[j] > 0) {
-                        maxDis = Math.max(maxDis, bitIndex[j]-i+1);
-                    }
-                } else {
-                    bitIndex[j] = i;
+public int[] smallestSubarrays(int[] nums) {
+    int[] res = new int[nums.length];
+    int[] bitIndex = new int[32]; // 每一位上为 1 的数字的最小索引
+    int highBit = 0; // 记录当前最高位
+    Arrays.fill(bitIndex, -1);
+    for (int i = nums.length-1; i >= 0; i--) {
+        int nn = nums[i];
+        int j = 0;
+        int maxDis = 1;
+        while (nn > 0 || j <= highBit) {
+            highBit = Math.max(highBit, j);
+            if (nn % 2 == 0) {
+                if (bitIndex[j] > 0) {
+                    maxDis = Math.max(maxDis, bitIndex[j]-i+1);
                 }
-                nn >>= 1;
-                j++;
+            } else {
+                bitIndex[j] = i;
             }
-            res[i] = maxDis;
+            nn >>= 1;
+            j++;
         }
-        return res;
+        res[i] = maxDis;
     }
+    return res;
 }
 ```
 
