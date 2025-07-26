@@ -1,0 +1,18 @@
+baseURL = 'https://yuvv.github.io/'
+languageCode = 'zh-cn'
+title = '咸鱼の幻想乡'
+theme = 'stack'
+
+[Params]
+mainSections = ["posts"]
+
+[Params.DateFormat]
+published ='2006-01-02'
+lastUpdated ='2006-01-02 15:04:05'
+
+[Params.Sidebar]
+avatar.src = 'img/avatar.jpg'
+
+[Params.Footer]
+since = 2017
+customText = 'All rights reserved.'

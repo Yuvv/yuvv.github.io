@@ -112,10 +112,10 @@ sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.
    opq456"""    # 三重引号多行字符串
 'abc\n123\n   opq456'
 >>> print('abc\t\n\'123')  # 字符转义
-abc	
+abc
 '123
 >>> print("abc\t\n'123")   # 使用双引号避免了对单引号的转义，跟上面的打印截过相同
-abc	
+abc
 '123
 >>> print(r'c:\windows\tmp')    # 加上r使得反斜杠不许转义即可打印
 c:\windows\tmp

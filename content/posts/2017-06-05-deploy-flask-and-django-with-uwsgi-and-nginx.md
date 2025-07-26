@@ -51,7 +51,7 @@ pidfile = /var/run/uwsgi/myapp.pid
 touch-reload    = /path/to/this/config/file
 
 wsgi-file       = myapp.py
-callable        = app 
+callable        = app
 
 wsgi-disable-file-wrapper = true
 ```
@@ -70,10 +70,10 @@ server {
     # max upload size
     client_max_body_size 75M;   # adjust to taste
 
-    location / { 
+    location / {
         uwsgi_pass  unix:///var/run/uwsgi/sock/myapp.sock;
         include     /path/to/your/project/root/uwsgi_params; # the uwsgi_params file you installed
-    }   
+    }
 }
 ```
 
@@ -95,7 +95,7 @@ uwsgi --ini myapp_uwsgi_config.ini
 service nginx reload;  # or service nginx restart
 ```
 
-至此设置完毕，可以进入<your server>:5001看看是否正常。
+至此设置完毕，可以进入`<your server>:5001`看看是否正常。
 
 ## Django
 
@@ -127,7 +127,7 @@ processes       = 10
 # the socket (use the full path to be safe
 socket          = /part/to/your/project/root/myapp.sock
 # ... with appropriate permissions - may be needed
-chmod-socket    = 666 
+chmod-socket    = 666
 # clear environment on exit
 vacuum          = true
 
@@ -163,17 +163,17 @@ server {
     # Django media
     location /media  {
         alias /part/to/your/project/root/media;  # your Django project's media files - amend as required
-    }   
+    }
 
     location /static {
         alias /part/to/your/project/root/static; # your Django project's static files - amend as required
-    }   
+    }
 
     # Finally, send all non-media requests to the Django server.
-    location / { 
+    location / {
         uwsgi_pass  django;
         include     /part/to/your/project/root/uwsgi_params; # the uwsgi_params file you installed
-    }   
+    }
 }
 ```
 
@@ -195,4 +195,4 @@ uwsgi --ini myapp_uwsgi_config.ini
 service nginx reload;  # or service nginx restart
 ```
 
-至此设置完毕，可以进入<your server>:8001看看是否正常。
+至此设置完毕，可以进入`<your server>:8001`看看是否正常。
