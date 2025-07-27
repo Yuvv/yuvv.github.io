@@ -4,3 +4,8 @@ _site/
 .jekyll-cache/
 
 vendor/bundle/
+
+public/
+resources/
+.hugo_build.lock
+assets/jsconfig.json
