@@ -2,7 +2,7 @@
 layout: post
 title: "Hello, Jekyll. Hello, Github Pages."
 date: 2017-01-21 23:14:59
-category: 纯水
+categories: [纯水]
 tags:
   - Jekyll
   - 纯水

@@ -2,8 +2,8 @@
 layout: post
 title: "LeetCode-1503-求所有蚂蚁掉下木头的时间"
 date: 2023-11-05 23:54:46+0800
-katex: true
-category: LeetCode
+math: true
+categories: [LeetCode]
 tags:
   - Array
   - Simulation
@@ -48,16 +48,16 @@ Explanation: 由于所有蚂蚁都朝右走，当最后一次蚂蚁（即在位�
 
 ## 条件约束
 
-- &nbsp; $$ 1 \leqslant n \leqslant 10^4 $$
-- &nbsp; $$ 1 \leqslant left.length,right.lenght \leqslant n+1 $$
-- &nbsp; $$ 1 \leqslant left[i],right[i] \leqslant n $$
-- &nbsp; $$ 1 \leqslant left.lenght+right.length \leqslant n+1 $$
+- $ 1 \leqslant n \leqslant 10^4 $
+- $ 1 \leqslant left.length,right.lenght \leqslant n+1 $
+- $ 1 \leqslant left[i],right[i] \leqslant n $
+- $ 1 \leqslant left.lenght+right.length \leqslant n+1 $
 
 # 题解
 
 ## 分析
 
-本题看似很复杂，每只蚂蚁与另一只相遇的时间可以用递推公式算出来，而蚂蚁会不断的掉头，所以又像是要求极限，然而由于 `left` 和 `right` 大小可能不等，且分布的位置完全随即，出现的情况非常多，所以基本没法求极限计算。题目本身打了一个 `Simulation` 标签，那么是否可以通过模拟蚂蚁行为来求解呢？也不行，因为每一次移动需要重新计算所有蚂的位置，要求解 `n` 个蚂蚁最终的结果，那么需要进行 $$ n*n $$ 次计算，时间复杂度达到 $$ O(n^2) $$，结果肯定是 TLE。
+本题看似很复杂，每只蚂蚁与另一只相遇的时间可以用递推公式算出来，而蚂蚁会不断的掉头，所以又像是要求极限，然而由于 `left` 和 `right` 大小可能不等，且分布的位置完全随即，出现的情况非常多，所以基本没法求极限计算。题目本身打了一个 `Simulation` 标签，那么是否可以通过模拟蚂蚁行为来求解呢？也不行，因为每一次移动需要重新计算所有蚂的位置，要求解 `n` 个蚂蚁最终的结果，那么需要进行 $ n*n $ 次计算，时间复杂度达到 $ O(n^2) $，结果肯定是 TLE。
 
 让我们换一种思路，不要陷入题目设定的场景。
 
@@ -84,5 +84,5 @@ public class Solution {
 }
 ```
 
-- **时间复杂度**：$$ O(n) $$
-- **空间复杂度**：$$ O(1) $$
+- **时间复杂度**：$ O(n) $
+- **空间复杂度**：$ O(1) $

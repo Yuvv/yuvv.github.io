@@ -3,8 +3,26 @@ languageCode = 'zh-cn'
 title = '咸鱼の幻想乡'
 theme = 'stack'
 
+DefaultContentLanguage = 'zh-cn'
+hasCJKLanguage = true
+
+## https://gohugo.io/configuration/markup/
+[Markup.Highlight]
+noClasses = false
+guessSyntax = false
+lineNos = true
+
+# {{{ hugo-services
+# https://gohugo.io/configuration/services/
+[services]
+[services.googleAnalytics]
+id = 'G-HFFY0P3VTB'
+
+# }}}
+
 [Params]
 mainSections = ["posts"]
+rssFullContent = true
 
 [Params.DateFormat]
 published ='2006-01-02'
@@ -16,3 +34,75 @@ avatar.src = 'img/avatar.jpg'
 [Params.Footer]
 since = 2017
 customText = 'All rights reserved.'
+
+[Params.ColorScheme]
+toggle = true
+default = 'auto'
+
+# {{{ stack-widgets
+## https://stack.jimmycai.com/config/widgets
+
+# You need to create a page with layout: search previously.
+# [[Params.Widgets.Homepage]]
+# type = 'search'
+
+# You need to create a page with layout: archives previously.
+# [[Params.Widgets.Homepage]]
+# type = 'archives'
+# params.limit = 10
+
+[[Params.Widgets.Homepage]]
+type = 'categories'
+params.limit = 10
+
+[[Params.Widgets.Homepage]]
+type = 'tag-cloud'
+params.limit = 10
+[[Params.Widgets.Homepage]]
+type = 'toc'
+
+# }}}
+
+# {{{ stack-menu
+# https://stack.jimmycai.com/config/menu
+[[menu.main]]
+name = 'Home'
+url = '/'
+weight = 10
+params.icon = 'home'
+[[menu.main]]
+name = 'Categories'
+url = '/categories/'
+weight = 20
+params.icon = 'categories'
+[[menu.main]]
+name = 'About'
+url = '/about/'
+weight = 30
+params.icon = 'user'
+
+[[menu.social]]
+name = 'GitHub'
+url = 'https://github.com/Yuvv'
+weight = 10
+params.icon = 'brand-github'
+params.newTab = true
+[[menu.social]]
+name = 'GitLab'
+url = 'https://gitlab.com/Yuvv'
+weight = 20
+params.icon = 'brand-gitlab'
+params.newTab = true
+[[menu.social]]
+name = 'Twitter'
+url = 'https://twitter.com/iBao_th'
+weight = 30
+params.icon = 'brand-twitter'
+params.newTab = true
+[[menu.social]]
+name = 'Mastodon'
+url = 'https://mastodon.social/@ibao'
+weight = 40
+params.icon = 'brand-mastodon'
+params.newTab = true
+# }}}

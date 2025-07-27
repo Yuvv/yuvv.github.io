@@ -2,7 +2,7 @@
 layout: post
 title: "使用nginx+uwsgi部署Flask和Django"
 date: 2017-06-05 22:22:22
-category: 部署
+categories: [部署]
 tags:
   - Django
   - Flask
